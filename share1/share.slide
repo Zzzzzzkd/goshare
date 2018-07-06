@@ -1,0 +1,107 @@
+Go 语言分享
+
+07 Jul 2018
+
+ZhengKeda
+zhengkeda@myhexin.com
+
+* 安装和环境配置
+
+- 下载源码 [[https://golang.org/dl/]]
+- 解压安装 tar -zxvf go1.10.3.linux-amd64.tar.gz
+- 创建项目路径 
+.code env.code /^\[root/,/go\/bin/
+- 配置环境变量
+.code env.code  /^export/,/PATH\/bin/
+- 检查是否安装成功
+.code env.code /^\[root@localhost goshare/,/amd64/
+
+* Hello World
+
+.play -edit helloworld.go
+
+* Go语言关键字
+
+.code keywords.map
+
+* Go语言变量
+
+* 变量声明
+- 长声明
+.code -edit variable.go /normal/,/lamron/
+- 短声明
+.code variable.go /short/,/trohs/
+.code global.go
+
+* 数据类型
+- 基础数据类型: 整型、浮点型、复数、布尔型、字符串
+.code type.go /^func main/,/^}/
+* 数据类型
+- 复合数据类型: 数组、切片
+.play complexType.go /^func main/,/^}/
+* 数据类型
+- 复合数据类型: Map、结构体
+.play complexType2.go /^func main/,/^}/
+
+* 条件控制
+- if else
+.code -edit control.go /ifelsebegin/,/ifelseend/
+* 条件控制
+- for 、 for range
+.code -edit control.go /forbegin/,/forend/
+.code -edit control.go /forrangebegin/,/forrangeend/
+* 条件控制
+- switch
+.code -edit control.go /switchbegin/,/switchend/
+- goto
+.play -edit control.go /gotobegin/,/^}/
+
+
+
+
+* Go语言函数
+- 基础声明
+.code func.go  /^func funcName/,/^}/
+- 多返回值声明
+.code func.go  /^func mutRet/,/^}/
+- 返回值预声明
+.code func.go  /^func retPreDeclare/,/^}/
+- 可变参数
+.code func.go  /^func changeArg/,/^}/
+
+* Go语言函数
+
+- defer
+.play func.go  /^func deferfunc/,/^}/
+- panic and recover
+.play func.go  /^func panicfunc/,/^}/
+
+* Go语言方法
+
+- 方法声明
+.code method.go /declarebeginOMIT/,/declareendOMIT/
+
+* Go语言方法
+- 通过结构体来扩展方法
+.play method.go /extendbeginOMIT/,/extendendOMIT/
+
+* 协程goroutime和通道channel
+- map不能并发读写
+.play concurrencyMap.go /^func main/,/^}/
+
+* 协程goroutime和通道channel
+- channel介绍
+1、ch :=make(chan int)
+2、FIFO 读写 i := <-ch;ch <- i
+3、并发安全
+4、close(ch)
+5、带缓冲和不带缓冲
+
+* 学习资料推荐
+[[https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/directory.md][the-way-to-go_ZH_CN]]
+[[https://yar999.gitbooks.io/gopl-zh/content/index.html][go语言圣经]]
+
+[[https://golang.org/pkg/][官方标准库]]
+[[https://studygolang.com/pkgdoc][中文标准库]]
+
+
