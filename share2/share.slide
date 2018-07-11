@@ -1,0 +1,59 @@
+Go 语言分享(二)
+11 Jul 2018
+
+Zhengkeda
+zhengkeda@myhexin.com
+
+* Go语言接口
+
+* 接口定义
+*接口是一个或多个方法签名的集合，任何类型的方法集中只要拥有与之对应的全部方法， 就表示它 "实现" 了该接口，无须在该类型上显式添加接口声明。*
+.play interfaceDeclare.go  /start/,/end/
+
+* 空接口
+*任何类型都实现了空接口*
+.play emptyInterface.go
+
+
+* 接口和nil
+*只有tab和data都为nil时，接口才等于nil*
+
+* 类型断言
+_判断接口是否包含了指定类型_
+.code typeAssert.go
+__
+__
+__
+__
+
+[[https://github.com/Unknwon/the-way-to-go_ZH_CN/blob/master/eBook/11.3.md][更具体的例子说明 type_interface.go]]
+
+* 类型断言
+.play type_interface.go /\/\/switch/,/switchEND/
+
+* sort接口实例
+.code sort_source.go
+
+* sort接口实例
+
+.play sort.go   /start/,/\/\/end/
+
+* 反射 reflect
+[[https://golang.org/pkg/reflect/][反射包官方文档]]
+
+
+*慎用反射的原因*
+
+`基于反射的代码是比较脆弱的.对于每一个会导致编译器报告类型错误的问题，在反射中都有与之相对应的问题，不同的是编译器会在构建时马上报告错误，而反射则是在真正运行到的时候才会抛出panic异常`
+
+`反射的操作不能做静态类型检查，而且大量反射的代码通常难以理解`
+
+`基于反射的代码通常比正常的代码运行速度慢一到两个数量级`
+
+* 简单实例
+
+* 文件读写
+.code file.go
+
+
+
