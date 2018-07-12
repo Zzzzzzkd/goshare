@@ -53,7 +53,31 @@ __
 * 简单实例
 
 * 文件读写
-.code file.go
+.code file.go /func osRead()/,/^}/
+* 文件读写
+.code file.go /func osWrite()/,/^}/
 
+* ioutil包，更简单的文件读写
+.code file.go /func ioutilReadWrite()/,/^}/
 
+* 格式化json数据
+.code json.go /func marshal()/,/^}/
+
+[[https://gocn.vip/article/363][更多json的技巧]]
+
+* go语言的单元测试和基准测试
+
+- 单元测试
+
+go语言中跑单元测试的命令是 go test ，与php的phpunit类似
+测试函数的头部必须是 func TestAbcde(t *testing.T)
+test文件命名需要以 _test.go结尾，并且一般放在包目录下
+
+- 基准测试
+
+go test -bench="."
+函数命名以 func BenchmarkXxxx(b *testing.B) 开头
+
+* 简单的web服务器
+.code httpserver.go
 
